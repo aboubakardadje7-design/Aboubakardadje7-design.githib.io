@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Aboubakar Dadje — Épidémiologiste et Modélisateur en Santé Publique. Master 2 Université d'Ebolowa, Cameroun. Chercheur VHB, modèle SEIRC+V, R0=2,067."/>
+<meta name="keywords" content="Aboubakar Dadje, épidémiologie, biostatistique, santé publique, Cameroun, hépatite B, SEIRC+V, modélisation mathématique, Ebolowa"/>
+<meta name="author" content="Aboubakar Dadje"/>
+<title>Aboubakar Dadje — Épidémiologiste & Modélisateur en Santé Publique</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet"/>
+<style>
+:root{--bg:#F5F2ED;--dark:#1A1410;--teal:#0A6B6E;--teal2:#12A89D;--mint:#D4EDEB;--white:#FFF;--grey:#7A7269;--lgrey:#DDD8D0;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--dark);overflow-x:hidden;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:.9rem 2rem;background:rgba(245,242,237,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--lgrey);}
+.nav-name{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:600;}
+.nav-name span{color:var(--teal2);font-style:italic;}
+.nav-links{display:flex;gap:1.5rem;list-style:none;}
+.nav-links a{font-size:.78rem;font-weight:500;color:var(--grey);text-decoration:none;letter-spacing:.06em;text-transform:uppercase;transition:color .2s;}
+.nav-links a:hover{color:var(--teal);}
+@media(max-width:600px){.nav-links{display:none;}}
+
+/* HERO */
+.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;padding-top:4rem;overflow:hidden;}
+@media(max-width:700px){.hero{grid-template-columns:1fr;}}
+.hero-left{display:flex;flex-direction:column;justify-content:center;padding:3rem 2rem 3rem 3rem;}
+.hero-tag{font-size:.7rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--teal2);margin-bottom:1.2rem;display:flex;align-items:center;gap:.5rem;}
+.hero-tag::before{content:'';width:20px;height:1.5px;background:var(--teal2);}
+.hero-name{font-family:'Cormorant Garamond',serif;font-size:clamp(2.8rem,5vw,4.5rem);line-height:1;letter-spacing:-1px;margin-bottom:.4rem;}
+.hero-name em{font-style:italic;color:var(--teal2);}
+.hero-sub{font-size:.9rem;color:var(--teal);font-weight:500;margin-bottom:.3rem;}
+.hero-loc{font-size:.78rem;color:var(--grey);margin-bottom:1.5rem;}
+.chips{display:flex;gap:.4rem;flex-wrap:wrap;margin-bottom:2rem;}
+.chip{background:var(--mint);color:var(--teal);font-size:.68rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:.28rem .8rem;border-radius:99px;}
+.btns{display:flex;gap:.8rem;flex-wrap:wrap;}
+.btn-p{background:var(--teal);color:#fff;padding:.75rem 1.6rem;border-radius:8px;font-size:.85rem;font-weight:500;text-decoration:none;transition:all .2s;}
+.btn-p:hover{background:var(--dark);transform:translateY(-2px);}
+.btn-o{border:1.5px solid var(--dark);color:var(--dark);padding:.75rem 1.6rem;border-radius:8px;font-size:.85rem;font-weight:500;text-decoration:none;transition:all .2s;}
+.btn-o:hover{background:var(--dark);color:#fff;}
+
+.hero-right{background:linear-gradient(160deg,var(--teal),var(--dark));display:flex;align-items:flex-end;justify-content:center;position:relative;overflow:hidden;}
+.hero-right::before{content:'';position:absolute;top:-80px;right:-80px;width:300px;height:300px;border-radius:50%;background:rgba(18,168,157,.15);}
+.hero-photo{width:75%;max-width:300px;border-radius:16px 16px 0 0;object-fit:cover;display:block;margin-top:3rem;animation:up .8s ease both;position:relative;z-index:2;}
+@keyframes up{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
+.badges{position:absolute;right:1rem;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:.6rem;z-index:3;}
+.badge{background:rgba(255,255,255,.1);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.2);border-radius:10px;padding:.7rem 1rem;color:#fff;}
+.badge-val{font-family:'JetBrains Mono',monospace;font-size:1.1rem;color:var(--teal2);display:block;line-height:1;}
+.badge-lab{font-size:.6rem;color:rgba(255,255,255,.5);margin-top:.15rem;}
+
+/* SECTIONS */
+section{padding:5rem 3rem;}
+@media(max-width:600px){section{padding:3.5rem 1.5rem;}}
+.s-label{font-size:.7rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--teal2);margin-bottom:.6rem;display:block;}
+.s-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3vw,2.6rem);line-height:1.1;color:var(--dark);margin-bottom:.7rem;}
+.s-sub{font-size:.9rem;color:var(--grey);font-weight:300;line-height:1.75;max-width:520px;margin-bottom:2.5rem;}
+
+/* ABOUT */
+.about{background:var(--white);}
+.about-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:4rem;align-items:start;}
+@media(max-width:700px){.about-grid{grid-template-columns:1fr;gap:2rem;}}
+.about-text p{font-size:.9rem;color:var(--grey);line-height:1.85;margin-bottom:1rem;font-weight:300;}
+.about-text strong{color:var(--dark);font-weight:600;}
+.stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+.scard{padding:1.3rem;background:var(--bg);border-radius:12px;border:1px solid var(--lgrey);text-align:center;transition:transform .2s;}
+.scard:hover{transform:translateY(-3px);}
+.scard-num{font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--teal2);font-weight:600;display:block;line-height:1;}
+.scard-lab{font-size:.7rem;color:var(--grey);margin-top:.25rem;line-height:1.3;}
+
+/* PUBLICATIONS */
+.publi{background:var(--bg);}
+.plist{display:flex;flex-direction:column;gap:1rem;}
+.pcard{background:var(--white);border:1px solid var(--lgrey);border-radius:14px;padding:1.5rem;display:flex;gap:1.2rem;align-items:flex-start;transition:all .25s;}
+.pcard:hover{border-color:var(--teal2);transform:translateX(4px);}
+.pnum{min-width:36px;height:36px;border-radius:8px;background:var(--mint);color:var(--teal);font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:600;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.pj{font-size:.68rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal2);margin-bottom:.25rem;}
+.pt{font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:var(--dark);font-weight:600;margin-bottom:.3rem;line-height:1.3;}
+.pa{font-size:.78rem;color:var(--grey);font-style:italic;margin-bottom:.3rem;}
+.ps{display:inline-block;font-size:.65rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;background:#FFF3CD;color:#856404;padding:.2rem .65rem;border-radius:99px;}
+.ps.b{background:var(--mint);color:var(--teal);}
+
+/* CV */
+.cv-sec{background:var(--dark);color:#fff;}
+.cv-sec .s-title{color:#fff;}
+.cv-sec .s-sub{color:rgba(255,255,255,.45);}
+.cv-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;}
+@media(max-width:700px){.cv-grid{grid-template-columns:1fr;gap:2rem;}}
+.cv-col-t{font-size:.68rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--teal2);margin-bottom:1.8rem;display:flex;align-items:center;gap:.6rem;}
+.cv-col-t::after{content:'';flex:1;height:1px;background:rgba(255,255,255,.1);}
+.tl{display:flex;flex-direction:column;}
+.ti{display:flex;gap:1.1rem;padding-bottom:1.8rem;position:relative;}
+.ti:not(:last-child)::before{content:'';position:absolute;left:17px;top:38px;bottom:0;width:1px;background:rgba(255,255,255,.08);}
+.tdot{min-width:36px;height:36px;border-radius:50%;background:rgba(18,168,157,.15);border:1.5px solid var(--teal2);display:flex;align-items:center;justify-content:center;font-size:.85rem;flex-shrink:0;}
+.tyr{font-family:'JetBrains Mono',monospace;font-size:.65rem;color:var(--teal2);margin-bottom:.2rem;}
+.ttit{font-family:'Cormorant Garamond',serif;font-size:.98rem;color:#fff;font-weight:600;margin-bottom:.18rem;}
+.tsub{font-size:.76rem;color:rgba(255,255,255,.45);line-height:1.5;}
+.tdet{font-size:.72rem;color:rgba(255,255,255,.28);line-height:1.4;margin-top:.2rem;font-style:italic;}
+
+/* SKILLS */
+.skills-sec{background:var(--white);}
+.sk-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;}
+@media(max-width:700px){.sk-grid{grid-template-columns:1fr;gap:2rem;}}
+.sk-col-t{font-size:.68rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--teal2);margin-bottom:1.2rem;padding-bottom:.5rem;border-bottom:1px solid var(--lgrey);}
+.ski{margin-bottom:.9rem;}
+.ski-top{display:flex;justify-content:space-between;font-size:.83rem;color:var(--dark);margin-bottom:.3rem;font-weight:500;}
+.ski-pct{font-family:'JetBrains Mono',monospace;font-size:.7rem;color:var(--grey);}
+.ski-bar{height:4px;background:var(--lgrey);border-radius:99px;overflow:hidden;}
+.ski-fill{height:100%;border-radius:99px;background:linear-gradient(90deg,var(--teal),var(--teal2));animation:grow 1.2s ease .3s both;}
+@keyframes grow{from{width:0;}}
+.tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.4rem;}
+.tag{background:var(--bg);border:1px solid var(--lgrey);color:var(--grey);font-size:.72rem;padding:.25rem .7rem;border-radius:7px;font-weight:500;}
+
+/* CERTIFS */
+.certs-sec{background:var(--bg);}
+.cert-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.9rem;}
+@media(max-width:700px){.cert-grid{grid-template-columns:1fr 1fr;}}
+.ccard{background:var(--white);border:1px solid var(--lgrey);border-radius:12px;padding:1.2rem;transition:all .2s;}
+.ccard:hover{border-color:var(--teal2);transform:translateY(-2px);}
+.cicon{font-size:1.3rem;margin-bottom:.5rem;}
+.cn{font-size:.83rem;font-weight:600;color:var(--dark);margin-bottom:.15rem;}
+.co{font-size:.72rem;color:var(--teal2);font-weight:500;margin-bottom:.1rem;}
+.cy{font-family:'JetBrains Mono',monospace;font-size:.67rem;color:var(--grey);}
+.langs{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.8rem;}
+.lcard{background:var(--white);border:1px solid var(--lgrey);border-radius:10px;padding:.9rem 1.2rem;flex:1;min-width:140px;}
+.ln{font-weight:600;color:var(--dark);font-size:.88rem;margin-bottom:.15rem;}
+.ll{font-size:.72rem;color:var(--teal2);font-weight:500;}
+
+/* CONTACT */
+.contact-sec{background:var(--dark);color:#fff;}
+.contact-sec .s-title{color:#fff;}
+.contact-sec .s-sub{color:rgba(255,255,255,.4);}
+.ct-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:start;}
+@media(max-width:700px){.ct-grid{grid-template-columns:1fr;gap:2rem;}}
+.cti{display:flex;align-items:flex-start;gap:.9rem;padding:1.1rem;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:12px;margin-bottom:.7rem;transition:all .2s;}
+.cti:hover{border-color:var(--teal2);}
+.cticon{width:38px;height:38px;border-radius:9px;background:rgba(18,168,157,.2);display:flex;align-items:center;justify-content:center;font-size:.95rem;flex-shrink:0;}
+.ctl{font-size:.65rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:.15rem;}
+.ctv{font-size:.85rem;color:#fff;font-weight:500;}
+.form-box{background:rgba(255,255,255,.05);border-radius:16px;padding:2rem;border:1px solid rgba(255,255,255,.1);}
+.ft{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:#fff;margin-bottom:.25rem;}
+.fs{font-size:.8rem;color:rgba(255,255,255,.35);margin-bottom:1.5rem;}
+.fi{width:100%;padding:.7rem 1rem;margin-bottom:.8rem;border:1.5px solid rgba(255,255,255,.12);border-radius:9px;font-family:'Outfit',sans-serif;font-size:.88rem;color:#fff;background:rgba(255,255,255,.07);outline:none;transition:border .2s;}
+.fi::placeholder{color:rgba(255,255,255,.22);}
+.fi:focus{border-color:var(--teal2);}
+textarea.fi{resize:vertical;min-height:100px;}
+.fsend{width:100%;padding:.8rem;background:var(--teal2);color:#fff;border:none;border-radius:9px;font-family:'Outfit',sans-serif;font-size:.92rem;font-weight:500;cursor:pointer;transition:all .2s;}
+.fsend:hover{background:var(--teal);transform:translateY(-2px);}
+
+footer{background:#111;color:rgba(255,255,255,.28);text-align:center;padding:1.8rem;font-size:.72rem;letter-spacing:.05em;}
+footer span{color:var(--teal2);}
+
+.fade-up{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease;}
+.fade-up.visible{opacity:1;transform:none;}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-name">Aboubakar <span>Dadje</span></div>
+  <ul class="nav-links">
+    <li><a href="#about">Profil</a></li>
+    <li><a href="#publi">Publications</a></li>
+    <li><a href="#cv">Parcours</a></li>
+    <li><a href="#skills">Compétences</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="hero">
+  <div class="hero-left">
+    <div class="hero-tag">Biologiste · Épidémiologiste · Modélisateur</div>
+    <h1 class="hero-name">Aboubakar<br/><em>Dadje</em></h1>
+    <div class="hero-sub">Épidémiologiste & Modélisateur en Santé Publique</div>
+    <div class="hero-loc">📍 Ebolowa, Cameroun · Né le 26 janvier 1999, Garoua</div>
+    <div class="chips">
+      <span class="chip">Hépatite B · VHB</span>
+      <span class="chip">Modèle SEIRC+V</span>
+      <span class="chip">SPSS · R · Python</span>
+      <span class="chip">Croix-Rouge</span>
+    </div>
+    <div class="btns">
+      <a href="#contact" class="btn-p">Me contacter →</a>
+      <a href="#cv" class="btn-o">Mon parcours</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="badges">
+      <div class="badge"><span class="badge-val">R₀=2,07</span><div class="badge-lab">Modèle SEIRC+V</div></div>
+      <div class="badge"><span class="badge-val">N=205</span><div class="badge-lab">Participants</div></div>
+      <div class="badge"><span class="badge-val">2 art.</span><div class="badge-lab">En préparation</div></div>
+    </div>
+    <img src="data:image/jpeg;base64,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" alt="Aboubakar Dadje" class="hero-photo"/>
+  </div>
+</div>
+
+<section class="about" id="about">
+  <div class="about-grid">
+    <div class="about-text">
+      <span class="s-label">Profil académique</span>
+      <h2 class="s-title fade-up">À propos de moi</h2>
+      <p>Biologiste et épidémiologiste en formation, spécialisé en <strong>modélisation mathématique dynamique des maladies infectieuses</strong> et en biostatistiques. En Master 2 Santé Publique à l'Université d'Ebolowa, je mène des recherches originales sur la transmission du <strong>virus de l'hépatite B (VHB) en milieu universitaire</strong>.</p>
+      <p>J'ai développé un modèle SEIRC+V calibré sur données empiriques, calculé un <strong>R₀ = 2,067</strong> par la méthode NGM et simulé 5 scénarios de prévention sur 5 ans. Volontaire actif à la <strong>Croix-Rouge Camerounaise</strong> depuis 2022.</p>
+    </div>
+    <div class="stats-grid">
+      <div class="scard fade-up"><span class="scard-num">205</span><div class="scard-lab">Participants étude VHB</div></div>
+      <div class="scard fade-up"><span class="scard-num">2,9%</span><div class="scard-lab">Prévalence HBV</div></div>
+      <div class="scard fade-up"><span class="scard-num">2,067</span><div class="scard-lab">R₀ calculé (NGM)</div></div>
+      <div class="scard fade-up"><span class="scard-num">5</span><div class="scard-lab">Scénarios simulés</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="publi" id="publi">
+  <span class="s-label">Productions scientifiques</span>
+  <h2 class="s-title fade-up">Publications & Ouvrages</h2>
+  <p class="s-sub fade-up">Articles scientifiques et ouvrages à paraître en 2026.</p>
+  <div class="plist">
+    <div class="pcard fade-up"><div class="pnum">1</div><div><div class="pj">Pan African Medical Journal · 2026</div><div class="pt">Prévalence et facteurs associés à l'infection par le VHB chez les étudiants de l'Université d'Ebolowa : étude transversale analytique</div><div class="pa">Dadje A., Lendem I. et al.</div><span class="ps">En préparation — soumission 2026</span></div></div>
+    <div class="pcard fade-up"><div class="pnum">2</div><div><div class="pj">Infectious Disease Modelling · 2026</div><div class="pt">Modélisation mathématique SEIRC+V de la transmission du VHB et simulation des stratégies de prévention en milieu universitaire au Cameroun</div><div class="pa">Dadje A., Lendem I. et al.</div><span class="ps">En préparation — soumission 2026</span></div></div>
+    <div class="pcard fade-up"><div class="pnum">3</div><div><div class="pj">Livre de vulgarisation · Amazon KDP · 2026</div><div class="pt">L'hépatite B sur les campus universitaires africains : comprendre, prévenir et agir</div><div class="pa">Dadje A.</div><span class="ps b">En préparation</span></div></div>
+    <div class="pcard fade-up"><div class="pnum">4</div><div><div class="pj">Roman social · Amazon KDP · 2026</div><div class="pt">La Vérité sur mes Oncles</div><div class="pa">Dadje A.</div><span class="ps b">Terminé — publication prévue 2026</span></div></div>
+  </div>
+</section>
+
+<section class="cv-sec" id="cv">
+  <span class="s-label" style="color:var(--teal2)">Curriculum Vitae</span>
+  <h2 class="s-title fade-up">Mon parcours</h2>
+  <p class="s-sub fade-up">Formation, recherche et engagement associatif.</p>
+  <div class="cv-grid">
+    <div>
+      <div class="cv-col-t">🎓 Formation</div>
+      <div class="tl">
+        <div class="ti"><div class="tdot">🎓</div><div><div class="tyr">2025–2026 (en cours)</div><div class="ttit">Master 2 — Santé Publique</div><div class="tsub">Épidémiologie & Biostatistiques · Université d'Ebolowa</div><div class="tdet">SEIRC+V · R₀=2,067 · Dir. Dr. Lendem Isabelle</div></div></div>
+        <div class="ti"><div class="tdot">📚</div><div><div class="tyr">2024–2025</div><div class="ttit">Master 1 — Santé Publique</div><div class="tsub">Université d'Ebolowa</div><div class="tdet">Étude prévalence VHB · N=205 étudiants</div></div></div>
+        <div class="ti"><div class="tdot">🔬</div><div><div class="tyr">2022–2025</div><div class="ttit">Licence — Sciences Biomédicales</div><div class="tsub">Faculté des Sciences, Université d'Ebolowa</div></div></div>
+        <div class="ti"><div class="tdot">🏫</div><div><div class="tyr">2021</div><div class="ttit">Baccalauréat Série D</div><div class="tsub">Lycée Classique et Moderne de Meiganga</div></div></div>
+      </div>
+    </div>
+    <div>
+      <div class="cv-col-t">💼 Expériences</div>
+      <div class="tl">
+        <div class="ti"><div class="tdot">🧪</div><div><div class="tyr">2024–2025</div><div class="ttit">Chercheur Principal — Étude VHB</div><div class="tsub">Université d'Ebolowa · Dr. Lendem Isabelle</div><div class="tdet">Étude transversale, SPSS, Python, Runge-Kutta 4, NGM</div></div></div>
+        <div class="ti"><div class="tdot">🚑</div><div><div class="tyr">2022–présent</div><div class="ttit">Volontaire Secouriste</div><div class="tsub">Croix-Rouge Camerounaise — Ebolowa</div><div class="tdet">Premiers secours, sensibilisation, formation</div></div></div>
+        <div class="ti"><div class="tdot">📊</div><div><div class="tyr">2026</div><div class="ttit">Publications scientifiques</div><div class="tsub">PAMJ & Infectious Disease Modelling</div><div class="tdet">2 articles en préparation</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="skills-sec" id="skills">
+  <span class="s-label">Outils & méthodes</span>
+  <h2 class="s-title fade-up">Compétences</h2>
+  <p class="s-sub fade-up">Maîtrise des outils statistiques et des méthodes épidémiologiques.</p>
+  <div class="sk-grid">
+    <div>
+      <div class="sk-col-t">Logiciels statistiques</div>
+      <div class="ski"><div class="ski-top"><span>SPSS v26</span><span class="ski-pct">92%</span></div><div class="ski-bar"><div class="ski-fill" style="width:92%"></div></div></div>
+      <div class="ski"><div class="ski-top"><span>R / RStudio</span><span class="ski-pct">82%</span></div><div class="ski-bar"><div class="ski-fill" style="width:82%"></div></div></div>
+      <div class="ski"><div class="ski-top"><span>Python 3 (SciPy, NumPy)</span><span class="ski-pct">80%</span></div><div class="ski-bar"><div class="ski-fill" style="width:80%"></div></div></div>
+      <div class="ski"><div class="ski-top"><span>STATA</span><span class="ski-pct">65%</span></div><div class="ski-bar"><div class="ski-fill" style="width:65%"></div></div></div>
+      <div class="ski"><div class="ski-top"><span>DHIS2</span><span class="ski-pct">60%</span></div><div class="ski-bar"><div class="ski-fill" style="width:60%"></div></div></div>
+    </div>
+    <div>
+      <div class="sk-col-t">Modélisation & Épidémiologie</div>
+      <div class="ski"><div class="ski-top"><span>Modèles SEIR / SEIRC+V</span><span class="ski-pct">88%</span></div><div class="ski-bar"><div class="ski-fill" style="width:88%"></div></div></div>
+      <div class="ski"><div class="ski-top"><span>Calcul R₀ (NGM)</span><span class="ski-pct">85%</span></div><div class="ski-bar"><div class="ski-fill" style="width:85%"></div></div></div>
+      <div class="ski"><div class="ski-top"><span>Runge-Kutta 4</span><span class="ski-pct">78%</span></div><div class="ski-bar"><div class="ski-fill" style="width:78%"></div></div></div>
+      <div class="sk-col-t" style="margin-top:1.5rem">Méthodes</div>
+      <div class="tags">
+        <span class="tag">Études transversales</span><span class="tag">Régression logistique</span>
+        <span class="tag">Sondage stratifié</span><span class="tag">ELISA / Sérologie</span>
+        <span class="tag">STROBE</span><span class="tag">Rédaction IMRaD</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="certs-sec" id="certs">
+  <span class="s-label">Formations complémentaires</span>
+  <h2 class="s-title fade-up">Certifications & Langues</h2>
+  <div class="cert-grid">
+    <div class="ccard fade-up"><div class="cicon">🌍</div><div class="cn">Épidémiologie & Biostatistiques</div><div class="co">CDC / OpenWHO</div><div class="cy">2024</div></div>
+    <div class="ccard fade-up"><div class="cicon">🏥</div><div class="cn">Santé publique & Promotion</div><div class="co">OMS / OpenWHO</div><div class="cy">2024</div></div>
+    <div class="ccard fade-up"><div class="cicon">💻</div><div class="cn">Bureautique avancée</div><div class="co">IAI Cameroun</div><div class="cy">2016</div></div>
+    <div class="ccard fade-up"><div class="cicon">🔧</div><div class="cn">Maintenance informatique</div><div class="co">ISTIA Cameroun</div><div class="cy">2017</div></div>
+    <div class="ccard fade-up"><div class="cicon">🎖️</div><div class="cn">Service Civique National</div><div class="co">MINJEC Cameroun</div><div class="cy">2016</div></div>
+    <div class="ccard fade-up"><div class="cicon">🚑</div><div class="cn">Premiers secours</div><div class="co">Croix-Rouge Camerounaise</div><div class="cy">2022</div></div>
+  </div>
+  <div class="langs">
+    <div class="lcard fade-up"><div class="ln">🇫🇷 Français</div><div class="ll">Langue maternelle</div></div>
+    <div class="lcard fade-up"><div class="ln">🇬🇧 Anglais</div><div class="ll">Niveau B1</div></div>
+    <div class="lcard fade-up"><div class="ln">🌍 Fulfulde</div><div class="ll">Langue locale</div></div>
+    <div class="lcard fade-up"><div class="ln">🌿 Bulu</div><div class="ll">Notions</div></div>
+  </div>
+</section>
+
+<section class="contact-sec" id="contact">
+  <span class="s-label" style="color:var(--teal2)">Restons en contact</span>
+  <h2 class="s-title fade-up">Me contacter</h2>
+  <p class="s-sub fade-up">Pour collaborations scientifiques, questions de recherche ou opportunités académiques.</p>
+  <div class="ct-grid">
+    <div>
+      <div class="cti fade-up"><div class="cticon">📧</div><div><div class="ctl">Email</div><div class="ctv">aboubakardadje7@gmail.com</div></div></div>
+      <div class="cti fade-up"><div class="cticon">📱</div><div><div class="ctl">WhatsApp / Téléphone</div><div class="ctv">+237 656 443 417 · +237 698 935 306</div></div></div>
+      <div class="cti fade-up"><div class="cticon">📍</div><div><div class="ctl">Localisation</div><div class="ctv">Ebolowa, Cameroun</div></div></div>
+      <div class="cti fade-up"><div class="cticon">🎓</div><div><div class="ctl">Directrice de thèse</div><div class="ctv">Dr. Lendem Isabelle · +237 677 976 620</div></div></div>
+    </div>
+    <div class="form-box fade-up">
+      <div class="ft">Envoyer un message</div>
+      <div class="fs">Je réponds généralement sous 24–48h.</div>
+      <input class="fi" type="text" placeholder="Votre nom"/>
+      <input class="fi" type="email" placeholder="Votre email"/>
+      <input class="fi" type="text" placeholder="Sujet"/>
+      <textarea class="fi" placeholder="Votre message..."></textarea>
+      <button class="fsend" onclick="this.textContent='Message envoyé ✓';this.style.background='#0A6B6E';">Envoyer →</button>
+    </div>
+  </div>
+</section>
+
+<footer>© 2026 <span>Aboubakar Dadje</span> · Épidémiologiste & Modélisateur en Santé Publique · Ebolowa, Cameroun</footer>
+
+<script>
+const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')}),{threshold:0.08});
+document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
